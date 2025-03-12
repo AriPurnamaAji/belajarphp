@@ -1,0 +1,118 @@
+/* Tambahkan ini di file terpisah (misal: style.css) atau langsung di file PHP di dalam tag <style> */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+nav {
+  background-color: #007bff;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background-color: #0056b3;
+}
+
+/* Container untuk form */
+.container {
+  width: 80%;
+  max-width: 800px;
+  background-color: white;
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: #007bff;
+}
+
+/* Input dan select styling */
+input[type="date"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input[type="date"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #0047ab;
+  box-shadow: 0px 0px 5px rgba(79, 172, 254, 0.5);
+}
+
+/* Tombol Add */
+.add-button {
+  text-align: right;
+  margin: 15px 20px;
+}
+button {
+  width: 80px;
+}
+.buttonOk {
+  grid-column: 2/2;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.buttonOk:hover {
+  opacity: 0.7;
+}
+
+.buttonClose {
+  grid-column: 5/5;
+  color: white;
+  background-color: #ef3447;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.buttonClose:hover {
+  opacity: 0.7;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  .add-button {
+    text-align: center;
+  }
+}

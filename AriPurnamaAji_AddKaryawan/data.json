@@ -1,0 +1,32 @@
+[
+    {
+        "Nik": "KR-01",
+        "Nama": "Kukuh",
+        "Jabatan": "Manajer IT",
+        "Gaji_Pokok": "9000000",
+        "Tunjangan": "900000",
+        "Status": "Kawin",
+        "Anak": "3",
+        "Tunj_Anak": "1350000"
+    },
+    {
+        "Nik": "KR-02",
+        "Nama": "Azis",
+        "Jabatan": "Manajer Keuangan",
+        "Gaji_Pokok": "8000000",
+        "Tunjangan": "800000",
+        "Status": "Kawin",
+        "Anak": "1",
+        "Tunj_Anak": "400000"
+    },
+    {
+        "Nik": "KR-03",
+        "Nama": "Hafizh",
+        "Jabatan": "Staff IT",
+        "Gaji_Pokok": "4000000",
+        "Tunjangan": "400000",
+        "Status": "Kawin",
+        "Anak": "1",
+        "Tunj_Anak": "200000"
+    }
+]

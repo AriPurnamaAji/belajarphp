@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "Nama_Jabatan": "Manajer IT"
+    },
+    {
+        "id": "2",
+        "Nama_Jabatan": "Manajer Keuangan"
+    },
+    {
+        "id": "3",
+        "Nama_Jabatan": "Staff IT"
+    },
+    {
+        "id": "4",
+        "Nama_Jabatan": "Staff Keuangan"
+    }
+]

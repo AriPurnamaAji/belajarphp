@@ -1,0 +1,234 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+/*img{
+	width:100%;
+}*/
+
+body{
+	background-color: #FFFAF0;
+	font-size: 18px;
+	font-family: arial;
+/*	margin:50px;*/
+}
+
+/*Container*/
+.container{
+	display: grid;
+	gap:50px;
+}
+
+/*Navbar*/
+nav{
+	display: flex;
+	background-color: #191970;
+	justify-content: space-around;
+	/*color: white;*/
+	cursor: pointer;
+	/* height: 80px; */
+	align-items: center;
+
+	/* tambahan */
+
+	height: auto;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.logo img{
+	width: 200px;
+	margin: 10px 0px 10px 10px;
+}
+nav ul{
+	display: flex;
+	list-style: none;
+	/*width: 50%;*/
+	justify-content: space-between;
+	align-items: center;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+}
+
+nav ul li img{
+	width:35px;
+	margin: 10px 0px 10px 10px;
+}
+
+
+.search{
+	width: auto;
+	margin:4px;
+}
+
+.search-text{
+	width: 297px;
+	padding: 15px 0px 15px 20px;
+	font-size: 16px;
+	border: 0px none;
+	height: 35px;
+	margin-right: 0px;
+	/*color: white;*/
+	/*outline: none;*/
+	background-color: #FFFAF0;
+	float: left;
+	box-sizing: border-box;
+}
+
+.button{
+	border: 0 none;
+	background: #FFFAF0 url(gambar/search.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 25px;
+	width: 60px;
+	float: right;
+	padding: 0;
+	text-align: center;
+	height: 35px;
+	cursor: pointer;
+}
+
+/*.kategori{
+	position: relative;
+	display: inline-block;
+}*/
+
+.subnav{
+	display: none;
+	position: absolute;
+	background-color: #FFFAF0;
+	min-width: 300px;
+}
+
+.subnav a{
+	/*display: block;*/
+	color: #191970;
+}
+
+.subnav a:hover{
+	background-color: #DCDCDC;
+	/*margin:5px;*/
+}
+
+.kategori:hover .subnav{
+	display: block;
+}
+
+.kategori{
+	background-image: url(gambar/panah.png);
+	background-position: 85% center;
+	background-repeat: no-repeat;
+	padding-right: 42px;
+}
+
+/*header*/
+.header{
+	margin-left: 50px;
+	margin-right: 50px;
+	display: grid;
+	grid-template-areas:
+	'year year wuhan'
+	'year year special';
+	gap:10px;
+}
+
+.year{
+	grid-area:year;
+	min-height:350px;
+	background-image: url(gambar/yearendsale.png);
+	/*background-size: cover;*/
+	background-position: center;
+	cursor: pointer;
+	border-radius: 7px;
+}
+
+.wuhan{
+	grid-area:wuhan;
+	background-image: url(gambar/powuhandiary.png);
+	cursor: pointer;
+	border-radius: 7px;
+	background-position: center;
+}
+
+.special{
+	grid-area:special;
+	background-image: url(gambar/specialoffer.jpg);
+	cursor: pointer;
+	border-radius: 7px;
+	background-position: center;
+}
+
+
+/*Services*/
+.services{
+	display: grid;
+	grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+	cursor: pointer;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+.service{
+	background-color: #FFFAF0;
+	text-align: center;
+
+}
+.service .image{
+	width: 50%;
+	height: 50%;
+	margin-left: 60px
+
+}
+h3{
+	padding-top: 30px;
+}
+
+/*gallery*/
+.gallery{
+	margin-top: 30px;
+	margin-right: 50px;
+	margin-left: 50px;
+	display: grid;
+	grid-template-columns:repeat(auto-fit,minmax(180px, 1fr));
+	gap:10px;
+}
+
+.gallery h2{
+	grid-column:1/-1;
+	text-align: left;
+	margin-bottom: 20px;
+
+}
+
+@media screen and (max-width: 800px) {
+	nav ul {
+		width: 100%;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	nav ul {
+		width: 100%;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+}
+
+.footer{
+	background-color:  #191970;
+	padding: 20px;
+	text-align: center;
+	color: white;
+	margin-top: 50px;
+}
+

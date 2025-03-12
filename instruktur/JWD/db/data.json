@@ -1,0 +1,42 @@
+[
+    {
+        "Nik": "KR-01",
+        "Nama": "Adi Restu Tri Maulana",
+        "Jabatan": "Manajer IT",
+        "Gaji_Pokok": "8500000",
+        "Tunjangan": "850000",
+        "Status": "Kawin",
+        "Anak": "1",
+        "Tunj_Anak": "425000"
+    },
+    {
+        "Nik": "KR-02",
+        "Nama": "Januar Ramadhan",
+        "Jabatan": "Staff IT",
+        "Gaji_Pokok": "4500000",
+        "Tunjangan": "450000",
+        "Status": "Kawin",
+        "Anak": "1",
+        "Tunj_Anak": "225000"
+    },
+    {
+        "Nik": "KR-03",
+        "Nama": "Ardien",
+        "Jabatan": "Staff IT",
+        "Gaji_Pokok": "4500000",
+        "Tunjangan": "450000",
+        "Status": "Kawin",
+        "Anak": "12",
+        "Tunj_Anak": "450000"
+    },
+    {
+        "Nik": "KR-04",
+        "Nama": "yiswi",
+        "Jabatan": "Manajer IT",
+        "Gaji_Pokok": "4000000",
+        "Tunjangan": "400000",
+        "Status": "Belum Kawin",
+        "Anak": "0",
+        "Tunj_anak": "0"
+    }
+]
