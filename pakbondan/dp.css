@@ -1,0 +1,106 @@
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+
+        .btn {
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        }
+        .btn-save {
+            background-color: #04AA6D;
+            color: white;
+            text-align: right;
+            display: inline-block;
+            float: right;
+            margin-right: 20px;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-edit {
+            background-color: #04AA6D;
+            color: white;
+            text-align: right;
+            display: inline-block;
+            float: right;
+            margin-right: 20px;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-delete {
+            background-color: #f44336;
+            color: white;
+            text-align: right;
+            display: inline-block;
+            float: right;
+            margin-right: 20px;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        } 
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        tr:first-child {
+            background-color: #04AA6D;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-emphasis-color:  #04AA6D;
+        }

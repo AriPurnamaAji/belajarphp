@@ -1,0 +1,18 @@
+[
+    {
+        "dokter_nip": "D-01",
+        "nama": "Dr Syahrul",
+        "jenis_kelamin": "Laki-laki",
+        "no_tlp": "088080808080",
+        "alamat": "Magnolian 14",
+        "spesialisasi": "Kandungan"
+    },
+    {
+        "dokter_nip": "D-02",
+        "nama": "Dr Imam",
+        "jenis_kelamin": "Laki-laki",
+        "no_tlp": "08808056080",
+        "alamat": "Kayuringin 14",
+        "spesialisasi": "Anak"
+    }
+]

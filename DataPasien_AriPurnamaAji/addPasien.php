@@ -53,28 +53,27 @@ include "function.php";
     </style>
     <?php
 
+    $thn = date('Y');
     if (file_exists('data.json')) { //buat memastikan data ada / tidak
         $current_data = file_get_contents('data.json'); //menarik data
         $array_data = json_decode($current_data, true);
         foreach ($array_data as $kode);
-        // $nik_kode[] = $kode['Nik'];
+
         if (empty($array_data)) {
             $b = 1;
         } else {
-            $a = substr($kode['Nrm'], 3);
+            $a = substr($kode['Nrm'], 6);
             $b = $a + 1;
         }
-        // $a = count($nik_kode);
-        // $b = $a + 1;
+
+
         if ($b < 10) {
-            $nrm = "MD-202500" . $b;
+            $nrm = "MD" . $thn . "00" . $b;
+        } elseif ($b > 9 && $b < 100) {
+            $nrm = "MD" . $thn . "0" . $b;
         } else {
-            $nrm = "MD-" . $b;
+            $nrm = "MD" . $thn . $b;
         }
-    } else {
-        $b = 001;
-        $tgl = date('Y');
-        $nrm = "MD-" . $tgl . $b;
     }
 
     if (isset($_POST['save'])) {
@@ -154,8 +153,8 @@ include "function.php";
     <nav>
         <a href="#">Home</a>
         <a href="pasien.php">Pasien</a>
-        <a href="#">Transaksi</a>
-        <a href="#">Logout</a>
+        <a href="rawatJalan.php">Rawat Jalan</a>
+        <a href="dokter.php">Dokter</a>
     </nav>
 
     <!-- Form Pegawai -->

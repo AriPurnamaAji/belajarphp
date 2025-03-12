@@ -1,6 +1,6 @@
 [
     {
-        "Nrm": "MD-2025001",
+        "Nrm": "MD2025001",
         "Nama": "Anggi",
         "Gender": "Perempuan",
         "Tempat_lahir": "Bekasi",
@@ -10,7 +10,7 @@
         "Tanggal_daftar": "2025-03-20"
     },
     {
-        "Nrm": "MD-2025002",
+        "Nrm": "MD2025002",
         "Nama": "Azis Aselole",
         "Gender": "Laki-laki",
         "Tempat_lahir": "Depok",
@@ -20,7 +20,7 @@
         "Tanggal_daftar": "2025-03-18"
     },
     {
-        "Nrm": "MD-2025003",
+        "Nrm": "MD2025003",
         "Nama": "Shafira Putri",
         "Gender": "Perempuan",
         "Tempat_lahir": "Jakarta",
@@ -30,7 +30,7 @@
         "Tanggal_daftar": "2025-03-21"
     },
     {
-        "Nrm": "MD-2025004",
+        "Nrm": "MD2025004",
         "Nama": "Kukuh",
         "Gender": "Laki-laki",
         "Tempat_lahir": "Bekasi",

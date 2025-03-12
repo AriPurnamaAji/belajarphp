@@ -1,0 +1,18 @@
+[
+    {
+        "kode_rawat": "R-01",
+        "nrm": "MD2025003",
+        "dokter_nip": "D-01",
+        "tgl_periksa": "2025-03-13",
+        "keluhan": "Kurang Uang",
+        "diagnosa": "Miskin"
+    },
+    {
+        "kode_rawat": "R-02",
+        "nrm": "MD2025004",
+        "dokter_nip": "D-02",
+        "tgl_periksa": "2025-03-12",
+        "keluhan": "Sakit Kepala",
+        "diagnosa": "Miskin"
+    }
+]

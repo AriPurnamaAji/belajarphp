@@ -1,0 +1,42 @@
+[
+    {
+        "nrm": "MD2025001",
+        "nama": "Natsu Dragneel",
+        "jenis_kelamin": "Laki-laki",
+        "tempat_lahir": "Magnolia",
+        "tanggal_lahir": "2006-06-26",
+        "no_tlp": "088080808080",
+        "alamat": "Magnolian 14",
+        "tgl_daftar": "2025-03-11T14:15"
+    },
+    {
+        "nrm": "MD2025002",
+        "nama": "Lucy Heartfilia GG",
+        "jenis_kelamin": "Perempuan",
+        "tempat_lahir": "Magnolia Gang Sepi",
+        "tanggal_lahir": "2009-06-17",
+        "no_tlp": "08888888888888",
+        "alamat": "Magnolian Fiore Kota",
+        "tgl_daftar": "2025-03-12"
+    },
+    {
+        "nrm": "MD2025003",
+        "nama": "Gray Fullbuster",
+        "jenis_kelamin": "Laki-laki",
+        "tempat_lahir": "Es Dingin",
+        "tanggal_lahir": "2002-01-31",
+        "no_tlp": "08555555555",
+        "alamat": "Fairy Tail Dingin",
+        "tgl_daftar": "2025-03-12"
+    },
+    {
+        "nrm": "MD2025004",
+        "nama": "Erza Scarlett GG",
+        "jenis_kelamin": "Perempuan",
+        "tempat_lahir": "Tower Mantap",
+        "tanggal_lahir": "2014-03-22",
+        "no_tlp": "08111122222",
+        "alamat": "Pedang Tajam",
+        "tgl_daftar": "2025-03-12"
+    }
+]

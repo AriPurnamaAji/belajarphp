@@ -1,0 +1,18 @@
+[
+    {
+        "Nip_dokter": "D-01",
+        "Nama": "Dr Syahrul",
+        "Gender": "Laki-laki",
+        "No_telp": "088080808080",
+        "Alamat": "Magnolian 14",
+        "Spesialisasi": "Kandungan"
+    },
+    {
+        "Nip_dokter": "D-02",
+        "Nama": "Dr Imam",
+        "Gender": "Laki-laki",
+        "No_telp": "08808056080",
+        "Alamat": "Kayuringin 14",
+        "Spesialisasi": "Anak"
+    }
+]

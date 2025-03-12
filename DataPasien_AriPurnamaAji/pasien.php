@@ -46,8 +46,8 @@ include "function.php";
     <nav>
         <a href="#">Home</a>
         <a href="pasien.php">Pasien</a>
-        <a href="#">Transaksi</a>
-        <a href="#">Logout</a>
+        <a href="rawatJalan.php">Rawat Jalan</a>
+        <a href="dokter.php">Dokter</a>
     </nav>
     <br>
     <h2>Daftar Data Pasien</h2>
