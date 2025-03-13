@@ -1,0 +1,20 @@
+[
+    {
+        "Kode_rawat": "RJ-001",
+        "Nrm": "MD2025001",
+        "Nama": "Anggi",
+        "Nip_dokter": "D-04",
+        "Waktu_kunjungan": "2025-04-05",
+        "Keluhan": "hthrrhrh",
+        "Diagnosa": "rhrht th rh rthrh"
+    },
+    {
+        "Kode_rawat": "RJ-002",
+        "Nrm": "MD2025001",
+        "Nama": "Anggi",
+        "Nip_dokter": "D-01",
+        "Waktu_kunjungan": "2025-03-28",
+        "Keluhan": "hetheh",
+        "Diagnosa": "heheh thth"
+    }
+]

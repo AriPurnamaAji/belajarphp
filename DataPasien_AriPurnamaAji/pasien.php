@@ -11,7 +11,7 @@ include "function.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Pasien</title>
-    <link rel="stylesheet" href="model.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Tabel */
         table {
@@ -53,7 +53,7 @@ include "function.php";
     <h2>Daftar Data Pasien</h2>
     <table>
         <tr>
-            <td colspan=10 style="text-align: center; padding: 1px; background-color: f4f4f4; border: 1px solid #f4f4f4;"></td>
+            <td colspan=11 style="text-align: center; padding: 1px; background-color: f4f4f4; border: 1px solid #f4f4f4;"></td>
             <td style="text-align: right; padding: 10px; background-color: #f4f4f4; border: 1px solid #f4f4f4;">
                 <a href="addPasien.php"><button class="buttonOk">Add</button></a>
             </td>
@@ -68,6 +68,7 @@ include "function.php";
             <th>No. Telepon</th>
             <th>Alamat</th>
             <th>Tanggal Daftar</th>
+            <th>Rawat Jalan</th>
             <th colspan=2>Proses</th>
         </tr>
         <?php
@@ -86,10 +87,13 @@ include "function.php";
                     <td><?= $data['Alamat']; ?></td>
                     <td><?= $data['Tanggal_daftar']; ?></td>
                     <td>
+                        <a href="addRawatJalan.php?Nrm=<?= $data['Nrm'] ?> "><button class=buttonOk> Daftar</button></a>
+                    </td>
+                    <td>
                         <a href="edit.php?Nrm=<?= $data['Nrm'] ?> "><button class=buttonOk>Edit</button></a>
                     </td>
                     <td>
-                        <a href="delete.php?Nrm=<?= $data['Nrm'] ?>" onclick="return confirm('Yakin mau hapus karyawan: <?= $data['Nama'] ?> dengan nrm: <?= $data['Nrm'] ?>?')"><button class=buttonClose>Delete</button></a>
+                        <a href="delete.php?Nrm=<?= $data['Nrm'] ?>" onclick="return confirm('Yakin mau hapus pasien: <?= $data['Nama'] ?> dengan nrm: <?= $data['Nrm'] ?>?')"><button class=buttonClose>Delete</button></a>
                     </td>
                 </tr>
         <?php

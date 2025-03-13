@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Pasien</title>
-    <link rel="stylesheet" href="model.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Tabel */
         table {
@@ -45,7 +45,7 @@
     </nav>
 
     <br>
-    <h2>Detail Pasien</h2>
+    <h2>Detail Pasien Rawat Jalan</h2>
 
     <?php
     $kode = $_GET['kode'];
@@ -71,6 +71,7 @@
             foreach ($dokter_array as $dokter) {
                 if ($dokter['Nip_dokter'] == $listdata['Nip_dokter']) {
                     $namaDr = $dokter['Nama'];
+                    $nip_dokter = $dokter['Nip_dokter'];
                     $spesialis = $dokter['Spesialisasi'];
                 }
             }
@@ -128,6 +129,11 @@
             <td>Dokter</td>
             <td>:</td>
             <td><?= $namaDr ?></td>
+        </tr>
+        <tr>
+            <td>Nip Dokter</td>
+            <td>:</td>
+            <td><?= $nip_dokter ?></td>
         </tr>
         <tr>
             <td>Spesialis</td>

@@ -5,7 +5,7 @@
         "Gender": "Laki-laki",
         "No_telp": "088080808080",
         "Alamat": "Magnolian 14",
-        "Spesialisasi": "Kandungan"
+        "Spesialisasi": "Penyakit Dalam"
     },
     {
         "Nip_dokter": "D-02",
@@ -13,6 +13,22 @@
         "Gender": "Laki-laki",
         "No_telp": "08808056080",
         "Alamat": "Kayuringin 14",
+        "Spesialisasi": "Jantung"
+    },
+    {
+        "Nip_dokter": "D-03",
+        "Nama": "Dr Fira",
+        "Gender": "Perempuan",
+        "No_telp": "08808056080",
+        "Alamat": "Bekasi 14",
+        "Spesialisasi": "Kandungan"
+    },
+    {
+        "Nip_dokter": "D-04",
+        "Nama": "Dr Nadhira",
+        "Gender": "Perempuan",
+        "No_telp": "08808056080",
+        "Alamat": "Jakarta 14",
         "Spesialisasi": "Anak"
     }
 ]

@@ -61,7 +61,7 @@ function edit_data()
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Data Pasien</title>
-    <link rel="stylesheet" href="model.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Styling table */
         table {

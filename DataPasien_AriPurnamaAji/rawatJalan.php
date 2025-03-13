@@ -11,7 +11,7 @@ include "function.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Rawat Jalan</title>
-    <link rel="stylesheet" href="model.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Tabel */
         table {
@@ -53,12 +53,6 @@ include "function.php";
     <h2>Data Rawat Jalan</h2>
     <table>
         <tr>
-            <td colspan=8 style="text-align: center; padding: 1px; background-color: f4f4f4; border: 1px solid #f4f4f4;"></td>
-            <td style="text-align: right; padding: 10px; background-color: #f4f4f4; border: 1px solid #f4f4f4;">
-                <a href="addRawatJalan.php"><button class="buttonOk">Add</button></a>
-            </td>
-        </tr>
-        <tr>
             <th>No.</th>
             <th>Kode Rawat</th>
             <th>Pasien</th>
@@ -82,27 +76,38 @@ include "function.php";
                     foreach ($pasien_array as $nama_pasien) {
                         if ($nama_pasien['Nrm'] == $data['Nrm']) {
                     ?>
-                            <td><?= $nama_pasien['Nama'] ?></td>
+                            <td><a href="riwayatRawatJalan.php?Nrm=<?= $nama_pasien['Nrm'] ?>"><?= $nama_pasien['Nama'] ?></a></td>
 
-                <?php
+                    <?php
                         }
                     }
-                }
-                ?>
-                <td><?= $data['Nip_dokter']; ?></td>
-                <td><?= $data['Waktu_kunjungan']; ?></td>
-                <td><?= $data['Keluhan']; ?></td>
-                <td><?= $data['Diagnosa']; ?></td>
-                <td>
-                    <a href="editRawatJalan.php?Nrm=<?= $data['Nrm'] ?> "><button class=buttonOk>Edit</button></a>
-                </td>
-                <td>
-                    <a href="deleteRawatJalan.php?Nrm=<?= $data['Nrm'] ?>" onclick="return confirm('Yakin mau hapus pasien dengan nrm: <?= $data['Nrm'] ?>?')"><button class=buttonClose>Delete</button></a>
-                </td>
+                    ?>
+
+                    <?php
+                    $dokter_data = file_get_contents('dokter.json');
+                    $dokter_array = json_decode($dokter_data, true);
+                    foreach ($dokter_array as $dokter) {
+                        if ($dokter['Nip_dokter'] == $data['Nip_dokter']) {
+                    ?>
+                            <td><?= $dokter['Nama'] ?></td>
+                    <?php
+                        }
+                    }
+                    ?>
+                    <td><?= $data['Waktu_kunjungan']; ?></td>
+                    <td><?= $data['Keluhan']; ?></td>
+                    <td><?= $data['Diagnosa']; ?></td>
+                    <td>
+                        <a href="editRawatJalan.php?Nrm=<?= $data['Nrm'] ?> "><button class=buttonOk>Edit</button></a>
+                    </td>
+                    <td>
+                        <a href="deleteRawatJalan.php?Kode_rawat=<?= $data['Kode_rawat'] ?>" onclick="return confirm('Yakin anda ingin menghapus data dengan Kode Rawat <?= $data['Kode_rawat'] ?>?')"><button class=buttonClose>Delete</button></a>
+                    </td>
                 </tr>
-            <?php
+        <?php
+            }
         }
-            ?>
+        ?>
     </table>
 
 </body>

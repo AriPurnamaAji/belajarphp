@@ -59,14 +59,6 @@ select {
   box-sizing: border-box;
 }
 
-input[type="date"]:focus,
-input[type="tel"]:focus,
-textarea:focus,
-select:focus {
-  border-color: #0047ab;
-  box-shadow: 0px 0px 5px rgba(79, 172, 254, 0.5);
-}
-
 /* Tombol Add */
 .add-button {
   text-align: right;
@@ -78,7 +70,7 @@ button {
 .buttonOk {
   grid-column: 2/2;
   color: white;
-  background-color: #28a745;
+  background-color: #0047ab;
   border: none;
   padding: 5px;
   border-radius: 4px;

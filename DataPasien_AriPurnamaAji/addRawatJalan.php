@@ -10,7 +10,7 @@ include "function.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Rawat Jalan</title>
-    <link rel="stylesheet" href="model.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Styling table */
         table {
@@ -52,7 +52,15 @@ include "function.php";
         }
     </style>
     <?php
+    $nrm = $_GET['Nrm'];
+    $pasien = file_get_contents('data.json');
+    $data = json_decode($pasien, true);
 
+    foreach ($data as $x => $edit) {
+        if ($edit['Nrm'] === $nrm) {
+            $nama = $edit['Nama'];
+        }
+    }
     // Untuk membuat urutan kode rawat
     if (file_exists('dataRawatJalan.json')) { //buat memastikan data ada / tidak
         $current_data = file_get_contents('dataRawatJalan.json'); //menarik data
@@ -69,45 +77,8 @@ include "function.php";
         } else {
             $kode_rawat = "RJ-" . $b;
         }
-    }
-
-    // Untuk membuat urutan rekam medis
-    $thn = date('Y');
-    if (file_exists('dataRawatJalan.json')) { //buat memastikan data ada / tidak
-        $current_data = file_get_contents('dataRawatJalan.json'); //menarik data
-        if (empty($array_data)) {
-            $b = 1;
-        } else {
-            $a = substr($kode['Nrm'], 6);
-            $b = $a + 1;
-        }
-
-
-        if ($b < 10) {
-            $nrm = "MD" . $thn . "00" . $b;
-        } elseif ($b > 9 && $b < 100) {
-            $nrm = "MD" . $thn . "0" . $b;
-        } else {
-            $nrm = "MD" . $thn . $b;
-        }
-    }
-
-    // Untuk membuat urutan nip dokter
-    if (file_exists('dataRawatJalan.json')) { //buat memastikan data ada / tidak
-        $current_data = file_get_contents('dataRawatJalan.json'); //menarik data
-        $array_data = json_decode($current_data, true);
-        foreach ($array_data as $kode);
-        if (empty($array_data)) {
-            $b = 1;
-        } else {
-            $a = substr($kode['Nip_dokter'], 4);
-            $b = $a + 1;
-        }
-        if ($b < 10) {
-            $Nip_dokter = "DR-00" . $b;
-        } else {
-            $Nip_dokter = "DR-" . $b;
-        }
+    } else {
+        $kode_rawat = "R-01";
     }
 
     if (isset($_POST['save'])) {
@@ -127,7 +98,8 @@ include "function.php";
     {
         $kode_rawat = $_POST['kode_rawat'];
         $nrm = $_POST['nrm'];
-        $Nip_dokter = $_POST['Nip_dokter'];
+        $nip_dokter = $_POST['nip_dokter'];
+        $nama = $_POST['nama'];
         $waktu_kunjungan = $_POST['waktu_kunjungan'];
         $keluhan = $_POST['keluhan'];
         $diagnosa = $_POST['diagnosa'];
@@ -137,7 +109,8 @@ include "function.php";
         $peserta = [
             'Kode_rawat' => $kode_rawat,
             'Nrm' => $nrm,
-            'Nip_dokter' => $Nip_dokter,
+            'Nama' => $nama,
+            'Nip_dokter' => $nip_dokter,
             'Waktu_kunjungan' => $waktu_kunjungan,
             'Keluhan' => $keluhan,
             'Diagnosa' => $diagnosa,
@@ -152,7 +125,8 @@ include "function.php";
     {
         $kode_rawat = $_POST['kode_rawat'];
         $nrm = $_POST['nrm'];
-        $Nip_dokter = $_POST['Nip_dokter'];
+        $nama = $_POST['nama'];
+        $nip_dokter = $_POST['nip_dokter'];
         $waktu_kunjungan = $_POST['waktu_kunjungan'];
         $keluhan = $_POST['keluhan'];
         $diagnosa = $_POST['diagnosa'];
@@ -161,7 +135,8 @@ include "function.php";
         $peserta = [
             'Kode_rawat' => $kode_rawat,
             'Nrm' => $nrm,
-            'Nip_dokter' => $Nip_dokter,
+            'Nama' => $nama,
+            'Nip_dokter' => $nip_dokter,
             'Waktu_kunjungan' => $waktu_kunjungan,
             'Keluhan' => $keluhan,
             'Diagnosa' => $diagnosa,
@@ -186,7 +161,7 @@ include "function.php";
     <!-- Form Rawat Jalan -->
     <div class="container">
         <h2>Form Rawat Jalan</h2>
-        <form nama="rawatJalan" action="" method="post">
+        <form nama="rawatJalan" action="" method="post" id="rawatJalan">
             <table>
                 <tr>
                     <td>Kode Rawat</td>
@@ -198,9 +173,13 @@ include "function.php";
                     <td><input value="<?= $nrm ?>" type="text" name="nrm" id="nrm" readonly></td>
                 </tr>
                 <tr>
+                    <td>Nama Pasien</td>
+                    <td><input value="<?= $nama ?>" type="text" name="nama" id="nama" readonly></td>
+                </tr>
+                <tr>
                     <td>NIP Dokter</td>
                     <td>
-                        <select name="Nip_dokter" id="Nip_dokter">
+                        <select name="nip_dokter" id="nip_dokter">
                             <option value="">-- Pilih Dokter --</option>
                             <option value="D-01">D-01</option>
                             <option value="D-02">D-02</option>
@@ -224,7 +203,7 @@ include "function.php";
                 <tr>
                     <td colspan="2" style="text-align: center;">
                         <button class="buttonOk" type="submit" name="save" onclick="return valid()">Save</button>
-                        <button class="buttonClose" type="reset" onclick="location.href='rawatJalan.php'">Close</button>
+                        <button class="buttonClose" type="reset" onclick="location.href='pasien.php'">Close</button>
                     </td>
                 </tr>
             </table>
