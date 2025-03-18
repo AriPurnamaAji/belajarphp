@@ -61,127 +61,81 @@ function edit_data()
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Data Pasien</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Styling table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        table tr td {
-            padding: 10px;
-        }
-
-        table tr td:first-child {
-            font-weight: bold;
-            color: #555;
-            width: 30%;
-        }
-
-        input[type="text"],
-        input[type="number"],
-        select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        /* Responsif */
-        @media (max-width: 600px) {
-            table tr td {
-                display: block;
-                width: 100%;
-            }
-
-            table tr td:first-child {
-                margin-top: 10px;
-                font-weight: bold;
-            }
-        }
-    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
     <!-- Navbar -->
-    <nav>
-        <a href="#">Home</a>
-        <a href="pasien.php">Pasien</a>
-        <a href="#">Transaksi</a>
-        <a href="#">Logout</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="home.php">RS Purnama</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pasien.php">Pasien</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rawatJalan.php">Rawat Jalan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dokter.php">Dokter</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <!-- Form Pegawai -->
-    <div class="container">
-        <h2>Edit Data Pasien</h2>
-        <form nama="pasien" action="" method="post">
-            <table>
-                <tr>
-                    <td>No. Rekam Medis</td>
-                    <td><input value="<?= $nrm ?>" type="text" name="nrm" id="nrm" readonly></td>
-
-                </tr>
-                <tr>
-                    <td>Nama</td>
-                    <td><input value="<?= $nama ?>" type="text" name="nama" id="nama"></td>
-                </tr>
-                <tr>
-                    <td>Jabatan</td>
-                    <td>
-                        <select value="<?= $gender ?>" name="gender" id="gender">
-                            <option value="">-- Pilih Gender --</option>
-                            <?php
-                            if (file_exists('gender.json')) {
-                                $current_data = file_get_contents('gender.json');
-                                $array_data = json_decode($current_data, true);
-
-                                foreach ($array_data as $listdata) {
-                            ?>
-                                    <option
-                                        <?php
-                                        if ($listdata['Jenis_Kelamin'] == $gender) {
-                                            echo "selected";
-                                        }
-                                        ?>
-                                        value="<?= $listdata['Jenis_Kelamin'] ?>"><?= $listdata['Jenis_Kelamin'] ?></option>
-                            <?php
-
-                                }
-                            }
-                            ?>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Tempat Lahir</td>
-                    <td><input value="<?= $tempat_lahir ?>" type="text" name="tempat_lahir" id="tempat_lahir"></td>
-                </tr>
-                <tr>
-                    <td>Tanggal Lahir</td>
-                    <td><input value="<?= $tanggal_lahir ?>" type="date" name="tanggal_lahir" id="tanggal_lahir"></td>
-                </tr>
-                <tr>
-                    <td>No. Telepon</td>
-                    <td><input value="<?= $no_telp ?>" type="number" name="no_telp" id="no_telp"></td>
-                </tr>
-                <tr>
-                    <td>Alamat</td>
-                    <td><input value="<?= $alamat ?>" type="text" name="alamat" id="alamat"></td>
-                </tr>
-                <tr>
-                    <td>Tanggal Daftar</td>
-                    <td><input value="<?= $tanggal_daftar ?>" type="date" name="tanggal_daftar" id="tanggal_daftar"></td>
-                </tr>
-                <td colspan="2" style="text-align: center;">
-                    <button class="buttonOk" type="submit" name="save" onclick="return valid()">Save</button>
-                    <button class="buttonClose" type="reset" onclick="location.href='pasien.php'">Close</button>
-                </td>
-                </tr>
-            </table>
-        </form>
+    <!-- Form Pasien -->
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Edit Data Pasien</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="" method="post" class="bg-white p-4 rounded shadow-sm">
+                    <div class="mb-3">
+                        <label for="nrm" class="form-label">NRM</label>
+                        <input type="text" id="nrm" name="nrm" class="form-control" value="<?= $nrm ?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" id="nama" name="nama" class="form-control" value="<?= $nama ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Jenis Kelamin</label>
+                        <div>
+                            <input type="radio" name="gender" value="Laki-laki" <?= ($gender === "Laki-laki") ? "checked" : "" ?> required> Laki-laki
+                            <input type="radio" name="gender" value="Perempuan" <?= ($gender === "Perempuan") ? "checked" : "" ?> required> Perempuan
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
+                        <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control" value="<?= $tempat_lahir ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+                        <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control" value="<?= $tanggal_lahir ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="no_telp" class="form-label">No. Telepon</label>
+                        <input type="number" name="no_telp" id="no_telp" class="form-control" value="<?= $no_telp ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="alamat" class="form-label">Alamat</label>
+                        <input type="text" name="alamat" id="alamat" class="form-control" value="<?= $alamat ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tanggal_daftar" class="form-label">Tanggal Daftar</label>
+                        <input type="date" name="tanggal_daftar" id="tanggal_daftar" class="form-control" value="<?= $tanggal_daftar ?>" required>
+                    </div>
+                    <div class="d-flex justify-content-center gap-2">
+                        <button type="submit" name="save" class="btn btn-primary" onclick="return valid()">Simpan</button>
+                        <a href="pasien.php" class="btn btn-danger">Batal</a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -26,84 +26,77 @@ foreach ($array_data as $listdata) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riwayat Pasien</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Tabel */
-        table {
-            width: 90%;
-            margin: 1px auto;
-            border-collapse: collapse;
-            background-color: white;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid #ddd;
-        }
-
-        th,
-        td {
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #007bff;
-            color: white;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
     <!-- Navbar -->
-    <nav>
-        <a href="#">Home</a>
-        <a href="pasien.php">Pasien</a>
-        <a href="rawatJalan.php">Rawat Jalan</a>
-        <a href="dokter.php">Dokter</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="home.php">RS Purnama</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pasien.php">Pasien</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rawatJalan.php">Rawat Jalan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dokter.php">Dokter</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <h2>Riwayat Rawat Jalan Pasien</h2>
-    <h3><?= $nama ?></h3>
-    <h4><?= $nrm ?></h4>
+    <div class="container mt-4">
+        <h2 class="text-center">Riwayat Rawat Jalan Pasien</h2>
+        <h3 class="text-center text-primary"><?= $nama ?></h3>
+        <h4 class="text-center mb-4 text-primary">NRM: <?= $nrm ?></h4>
 
-    <table>
-        <tr>
-            <th>No.</th>
-            <th>Kode Rawat</th>
-            <th>Waktu Kunjungan</th>
-            <th>Keluhan</th>
-            <th>Diagnosa</th>
-            <th>Dokter yang menangani</th>
-        </tr>
-        <?php foreach ($riwayat as $x => $listdata) { ?>
-            <tr>
-                <td><?= $x + 1 ?></td>
-                <td><?= $listdata['Kode_rawat'] ?></td>
-                <td><?= $listdata['Waktu_kunjungan'] ?></td>
-                <td><?= $listdata['Keluhan']; ?></td>
-                <td><?= $listdata['Diagnosa'] ?></td>
-                <td>
-                    <?php
-                    // Mencari dokter berdasarkan Nip_dokter yang sesuai dengan data pasien
-                    $nama_dokter = "Tidak ditemukan";
-                    $spesialis = "Tidak ditemukan";
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="table-primary">
+                    <tr>
+                        <th>No.</th>
+                        <th>Kode Rawat</th>
+                        <th>Waktu Kunjungan</th>
+                        <th>Keluhan</th>
+                        <th>Diagnosa</th>
+                        <th>Dokter yang Menangani</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($riwayat as $x => $listdata) { ?>
+                        <tr>
+                            <td><?= $x + 1 ?></td>
+                            <td><?= $listdata['Kode_rawat'] ?></td>
+                            <td><?= $listdata['Waktu_kunjungan'] ?></td>
+                            <td><?= $listdata['Keluhan']; ?></td>
+                            <td><?= $listdata['Diagnosa'] ?></td>
+                            <td>
+                                <?php
+                                $nama_dokter = "Tidak ditemukan";
+                                $spesialis = "Tidak ditemukan";
 
-                    foreach ($dokter_array as $dokter) {
-                        if ($dokter['Nip_dokter'] == $listdata['Nip_dokter']) {
-                            $nama_dokter = $dokter['Nama'];
-                            $spesialis = $dokter['Spesialisasi'];
-                            break; // Keluar dari loop jika dokter ditemukan
-                        }
-                    }
-                    ?>
-                    <?= $nama_dokter ?><br>
-                    Spesialis: <?= $spesialis ?>
-                </td>
-            </tr>
-        <?php } ?>
-    </table>
+                                foreach ($dokter_array as $dokter) {
+                                    if ($dokter['Nip_dokter'] == $listdata['Nip_dokter']) {
+                                        $nama_dokter = $dokter['Nama'];
+                                        $spesialis = $dokter['Spesialisasi'];
+                                        break;
+                                    }
+                                }
+                                ?>
+                                <?= $nama_dokter ?><br>
+                                <small class="text-muted">Spesialis: <?= $spesialis ?></small>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

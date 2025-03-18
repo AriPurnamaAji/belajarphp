@@ -2,19 +2,28 @@
     {
         "Kode_rawat": "RJ-001",
         "Nrm": "MD2025001",
-        "Nama": "Anggi",
+        "Nama": "Anggi Oktavia",
         "Nip_dokter": "D-04",
-        "Waktu_kunjungan": "2025-04-05",
-        "Keluhan": "hthrrhrh",
-        "Diagnosa": "rhrht th rh rthrh"
+        "Waktu_kunjungan": "2025-03-21",
+        "Keluhan": "Panas Dingin",
+        "Diagnosa": "Demam"
     },
     {
         "Kode_rawat": "RJ-002",
-        "Nrm": "MD2025001",
-        "Nama": "Anggi",
+        "Nrm": "MD2025002",
+        "Nama": "Kukuh Ari",
         "Nip_dokter": "D-01",
-        "Waktu_kunjungan": "2025-03-28",
-        "Keluhan": "hetheh",
-        "Diagnosa": "heheh thth"
+        "Waktu_kunjungan": "2025-04-19",
+        "Keluhan": "Pusing",
+        "Diagnosa": "Darah Tinggi"
+    },
+    {
+        "Kode_rawat": "RJ-003",
+        "Nrm": "MD2025001",
+        "Nama": "Anggi Oktavia",
+        "Nip_dokter": "D-02",
+        "Waktu_kunjungan": "2025-03-27",
+        "Keluhan": "Deg deg an ketemu crush",
+        "Diagnosa": "Berbunga-bunga"
     }
 ]

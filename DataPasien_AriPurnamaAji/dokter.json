@@ -3,31 +3,31 @@
         "Nip_dokter": "D-01",
         "Nama": "Dr Syahrul",
         "Gender": "Laki-laki",
-        "No_telp": "088080808080",
-        "Alamat": "Magnolian 14",
+        "No_telp": "089612345678",
+        "Alamat": "Magnolian 11",
         "Spesialisasi": "Penyakit Dalam"
     },
     {
         "Nip_dokter": "D-02",
         "Nama": "Dr Imam",
         "Gender": "Laki-laki",
-        "No_telp": "08808056080",
-        "Alamat": "Kayuringin 14",
+        "No_telp": "081356781234",
+        "Alamat": "Kayuringin 12",
         "Spesialisasi": "Jantung"
     },
     {
         "Nip_dokter": "D-03",
         "Nama": "Dr Fira",
         "Gender": "Perempuan",
-        "No_telp": "08808056080",
-        "Alamat": "Bekasi 14",
+        "No_telp": "085643219876",
+        "Alamat": "Bekasi 13",
         "Spesialisasi": "Kandungan"
     },
     {
         "Nip_dokter": "D-04",
         "Nama": "Dr Nadhira",
         "Gender": "Perempuan",
-        "No_telp": "08808056080",
+        "No_telp": "082190872344",
         "Alamat": "Jakarta 14",
         "Spesialisasi": "Anak"
     }

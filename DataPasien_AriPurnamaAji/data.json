@@ -1,32 +1,32 @@
 [
     {
         "Nrm": "MD2025001",
-        "Nama": "Anggi",
+        "Nama": "Anggi Oktavia",
         "Gender": "Perempuan",
-        "Tempat_lahir": "Bekasi",
-        "Tanggal_lahir": "2004-11-25",
-        "No_telp": "08567326533",
-        "Alamat": "Bekasi Selatan",
-        "Tanggal_daftar": "2025-03-20"
-    },
-    {
-        "Nrm": "MD2025002",
-        "Nama": "Azis Aselole",
-        "Gender": "Laki-laki",
-        "Tempat_lahir": "Depok",
-        "Tanggal_lahir": "2002-06-19",
-        "No_telp": "08562765262",
-        "Alamat": "Depok Baru",
+        "Tempat_lahir": "Bandung",
+        "Tanggal_lahir": "2006-07-13",
+        "No_telp": "085724568752",
+        "Alamat": "Tambun Selatan No. 15",
         "Tanggal_daftar": "2025-03-18"
     },
     {
+        "Nrm": "MD2025002",
+        "Nama": "Kukuh Ari",
+        "Gender": "Laki-laki",
+        "Tempat_lahir": "Bekasi",
+        "Tanggal_lahir": "1999-11-17",
+        "No_telp": "091345728796",
+        "Alamat": "Babelan No. 7",
+        "Tanggal_daftar": "2025-03-20"
+    },
+    {
         "Nrm": "MD2025003",
-        "Nama": "Shafira Putri",
+        "Nama": "Ayura Safa",
         "Gender": "Perempuan",
-        "Tempat_lahir": "Jakarta",
-        "Tanggal_lahir": "2002-10-15",
-        "No_telp": "089652836375",
-        "Alamat": "Kranji, Jl. Baru, Blok A 12",
-        "Tanggal_daftar": "2025-03-21"
+        "Tempat_lahir": "Bekasi",
+        "Tanggal_lahir": "2000-03-21",
+        "No_telp": "081365462788",
+        "Alamat": "Pekayon No. 27",
+        "Tanggal_daftar": "2025-03-19"
     }
 ]

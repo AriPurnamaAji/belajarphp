@@ -31,67 +31,49 @@ include "function.php";
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="pasien.php">Pasien</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pasien.php">Pasien</a></li>
                     <li class="nav-item"><a class="nav-link" href="rawatJalan.php">Rawat Jalan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dokter.php">Dokter</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="dokter.php">Dokter</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container mt-4">
-        <h2 class="text-center">Data Pasien</h2>
+        <h2 class="text-center">Data Dokter</h2>
         <br>
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <thead class="table-primary">
                     <tr>
                         <th>No.</th>
-                        <th>No. Rekam Medis</th>
-                        <th>Nama Pasien</th>
+                        <th>Nip Dokter</th>
+                        <th>Nama</th>
                         <th>Jenis Kelamin</th>
-                        <th>Tempat Lahir</th>
-                        <th>Tanggal Lahir</th>
-                        <th>No. Telepon</th>
+                        <th>No Telepon</th>
                         <th>Alamat</th>
-                        <th>Tanggal Daftar</th>
-                        <th>Rawat Jalan</th>
-                        <th colspan=2>Proses</th>
+                        <th>Spesialisasi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    if (file_exists('data.json')) {
-                        $current_data = file_get_contents('data.json');
+                    if (file_exists('dokter.json')) {
+                        $current_data = file_get_contents('dokter.json');
                         $array_data = json_decode($current_data, true);
                         foreach ($array_data as $index => $data) { ?>
                             <tr>
                                 <td><?= $index + 1 . "." ?></td>
-                                <td><?= $data['Nrm']; ?></td>
+                                <td><?= $data['Nip_dokter']; ?></td>
                                 <td><?= $data['Nama']; ?></td>
                                 <td><?= $data['Gender']; ?></td>
-                                <td><?= $data['Tempat_lahir']; ?></td>
-                                <td><?= $data['Tanggal_lahir']; ?></td>
                                 <td><?= $data['No_telp']; ?></td>
                                 <td><?= $data['Alamat']; ?></td>
-                                <td><?= $data['Tanggal_daftar']; ?></td>
-                                <td>
-                                    <a href="addRawatJalan.php?Nrm=<?= $data['Nrm'] ?>" class="btn btn-primary btn-sm">Daftar</a>
-                                </td>
-                                <td>
-                                    <a href="edit.php?Nrm=<?= $data['Nrm'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                                </td>
-                                <td>
-                                    <a href="delete.php?Nrm=<?= $data['Nrm'] ?>" onclick="return confirm('Yakin mau hapus pasien: <?= $data['Nama'] ?>?')" class="btn btn-danger btn-sm">Hapus</a>
-                                </td>
+                                <td><?= $data['Spesialisasi']; ?></td>
                             </tr>
                     <?php }
                     } ?>
                 </tbody>
             </table>
-        </div>
-        <div class="mt-2">
-            <a href="addPasien.php" class="btn btn-success">Tambah Pasien</a>
         </div>
     </div>
 
