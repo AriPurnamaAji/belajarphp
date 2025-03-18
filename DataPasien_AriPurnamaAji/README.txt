@@ -1,0 +1,1 @@
+Jalankan localhost web ini menggunakan koneksi internet, karena css nya menggunakan link bootstrap.
